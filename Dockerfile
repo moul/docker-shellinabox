@@ -14,10 +14,9 @@ RUN cd /tmp && \
     cd /tmp/shellinabox-$VERSION/ && \
     ./configure && \
     make && \
-    make install
-
-RUN mkdir /etc/shellinabox-css && \
-    cp /tmp/shellinabox-$VERSION/shellinabox/*.css /etc/shellinabox-css/
+    make install && \
+    mkdir /etc/shellinabox-css && \
+    cp shellinabox/*.css /etc/shellinabox-css/
 
 ADD setup.sh /setup.sh
 RUN /setup.sh
