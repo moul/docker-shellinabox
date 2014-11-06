@@ -4,8 +4,8 @@ MAINTAINER Manfred Touron "m@42.am"
 ENV VERSION 2.14
 ENV TARBALL shellinabox-$VERSION.tar.gz
 
-RUN apt-get -qq -y install \
-    gcc make && \
+RUN apt-get update && \
+    apt-get -qq -y install gcc make && \
     apt-get clean
 
 ADD http://shellinabox.googlecode.com/files/$TARBALL /tmp/
